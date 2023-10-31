@@ -9,7 +9,11 @@ class Buscador(MDApp):
     def buscarEndereco(self):
         try:
             entrada_dados = int(self.root.ids.entrada_dados.text)
-            saida_dados = self.root.ids.saida_dados
+            saida_dados_cep = self.root.ids.saida_dados_cep
+            saida_dados_logradouro = self.root.ids.saida_dados_logradouro
+            saida_dados_bairro = self.root.ids.saida_dados_bairro
+            saida_dados_cidade = self.root.ids.saida_dados_cidade
+            saida_dados_estado = self.root.ids.saida_dados_estado
 
             if len(str(entrada_dados)) != 8:
                 raise ValueError
@@ -21,10 +25,14 @@ class Buscador(MDApp):
             if "code" in data:
                 raise ValueError
 
-            saida_dados.text = (
-                f"CEP: {data['cep']}\nLogradouro: {data['address']}\n"
-                f"Bairro: {data['district']}\nCidade: {data['city']}\n"
-                f"Estado: {data['state']}")
+            saida_dados_cep.text = f"CEP: {data['cep']}"
+            saida_dados_logradouro.text = f"Logradouro: {data['address']}"
+            saida_dados_bairro.text = f"Bairro: {data['district']}"
+            saida_dados_cidade.text = f"Cidade: {data['city']}"
+            saida_dados_estado.text = f"Estado: {data['state']}"
+                
+                
+                
         except ValueError:
             print("Deve conter 8 caracteres e apenas números.")
 

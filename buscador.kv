@@ -1,16 +1,22 @@
 MDScreen:
     MDBoxLayout:
         orientation:"vertical"
-        padding: "30dp"
-        pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+        
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
         MDLabel:
-            text:"Buscador de Endereço"
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            md_bg_color: 66/255, 135/255, 245/255, 1
+            text:"BUSCADOR DE ENDEREÇO"
             halign:"center"
+            valign: "center"
             font_style:"H4"
+            size_hint: 1, 0.5
 
         MDBoxLayout:
             spacing: "10dp"
+            padding: "30dp"
 
             MDTextField:
                 id: entrada_dados
@@ -22,10 +28,53 @@ MDScreen:
             MDFlatButton:
                 on_press: app.buscarEndereco()
                 text: "Buscar"
-                md_bg_color: "cyan"
+                theme_text_color: "Custom"
+                text_color: 255/255, 255/255, 255/255, 1
+                md_bg_color: 66/255, 135/255, 245/255, 1
                 pos_hint: {'center_x': 0.5, 'center_y': 0.8}
     
-    MDLabel:
-        id: saida_dados
+    MDBoxLayout:
+        
+        orientation: "vertical"
         padding: "30dp"
-        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        spacing: "5dp"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.22}
+        size_hint: 1, 0.5
+
+        MDLabel:
+            border_radius: 20
+            radius: [15]
+            padding: "5dp"
+            size_hint: 1, 0.2
+            id: saida_dados_cep
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            md_bg_color: 66/255, 135/255, 245/255, 1
+        MDLabel:
+            padding: "5dp"
+            size_hint: 1, 0.2
+            id: saida_dados_logradouro
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            md_bg_color: 66/255, 135/255, 245/255, 1
+        MDLabel:
+            padding: "5dp"
+            size_hint: 1, 0.2
+            id: saida_dados_bairro
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            md_bg_color: 66/255, 135/255, 245/255, 1
+        MDLabel:
+            padding: "5dp"
+            size_hint: 1, 0.2
+            id: saida_dados_cidade
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            md_bg_color: 66/255, 135/255, 245/255, 1
+        MDLabel:
+            padding: "5dp"
+            size_hint: 1, 0.2
+            id: saida_dados_estado
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            md_bg_color: 66/255, 135/255, 245/255, 1
