@@ -21,11 +21,6 @@ class Buscador(MDApp):
             if "code" in data:
                 raise ValueError
 
-            for key in data:
-                {
-                    print(key, ":", data[key])
-                }
-
             saida_dados.text = (
                 f"CEP: {data['cep']}\nLogradouro: {data['address']}\n"
                 f"Bairro: {data['district']}\nCidade: {data['city']}\n"
