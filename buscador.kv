@@ -15,23 +15,35 @@ MDScreen:
             size_hint: 1, 0.5
 
         MDBoxLayout:
-            spacing: "10dp"
+            spacing: "1dp"
             padding: "30dp"
+            orientation: "vertical"
 
-            MDTextField:
-                id: entrada_dados
-                hint_text: "CEP"
-                helper_text: "Insira o seu CEP"
-                max_text_length: 8
-                pos_hint: {'center_x': 0.5, 'center_y': 0.8}
-            
-            MDFlatButton:
-                on_press: app.buscarEndereco()
-                text: "Buscar"
+            MDLabel:
+                id: saida_dados_erro
                 theme_text_color: "Custom"
-                text_color: 255/255, 255/255, 255/255, 1
-                md_bg_color: 66/255, 135/255, 245/255, 1
+                text_color: 255/255, 0/255, 0/255, 1
                 pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                size_hint: 1, 0.01
+
+            MDBoxLayout:
+                spacing: "10dp"
+                pos_hint: {'center_x': 0.5, 'center_y': 1}
+
+                MDTextField:
+                    id: entrada_dados
+                    hint_text: "CEP"
+                    helper_text: "Insira o seu CEP"
+                    max_text_length: 8
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                
+                MDFlatButton:
+                    on_press: app.buscarEndereco()
+                    text: "Buscar"
+                    theme_text_color: "Custom"
+                    text_color: 255/255, 255/255, 255/255, 1
+                    md_bg_color: 66/255, 135/255, 245/255, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
     
     MDBoxLayout:
         

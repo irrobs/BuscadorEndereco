@@ -14,6 +14,7 @@ class Buscador(MDApp):
             saida_dados_bairro = self.root.ids.saida_dados_bairro
             saida_dados_cidade = self.root.ids.saida_dados_cidade
             saida_dados_estado = self.root.ids.saida_dados_estado
+            saida_dados_erro = self.root.ids.saida_dados_erro
 
             if len(str(entrada_dados)) != 8:
                 raise ValueError
@@ -25,6 +26,7 @@ class Buscador(MDApp):
             if "code" in data:
                 raise ValueError
 
+            saida_dados_erro.text = ""
             saida_dados_cep.text = f"CEP: {data['cep']}"
             saida_dados_logradouro.text = f"Logradouro: {data['address']}"
             saida_dados_bairro.text = f"Bairro: {data['district']}"
@@ -34,7 +36,7 @@ class Buscador(MDApp):
                 
                 
         except ValueError:
-            print("Deve conter 8 caracteres e apenas números.")
+            saida_dados_erro.text = "Deve conter 8 caracteres e apenas números."
 
 
 Buscador().run()
